@@ -1,0 +1,77 @@
+/* default css start */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+html{
+    scroll-behavior: smooth;
+}
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff
+    url('../images/preloader.gif')
+    no-repeat center;
+    z-index:9999;
+}
+
+/* default css end */
+
+/* Landing Page Home Container */
+
+.home-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(5, 5, 5);
+    padding: 3rem 10rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-default {
+    border: none;
+    padding: 0.6rem 3.5rem;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.dark, .light:hover {
+    color: white;
+    background-color: #f3223b;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.light, .dark:hover {
+    border: 1px solid#f3223b;
+    color: #f3223b;
+    background-color:white ;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.left-column{
+    flex: 0.5;
+    margin: auto 0;
+}
+.right-column{
+    flex: 1;
+    padding-left: 5rem;
+}
+.home-txt{
+    color:white;
+    text-transform: capitalize;
+    font-size: 4.5rem;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    line-height:6rem;
+}
+.home-txt>span{
+    color:#f3223b;
+    text-transform: uppercase;
+}
