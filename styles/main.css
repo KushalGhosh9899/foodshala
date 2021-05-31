@@ -1,11 +1,12 @@
 /* default css start */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Poppins', sans-serif;
 }
 html{
     scroll-behavior: smooth;
@@ -19,16 +20,46 @@ html{
     no-repeat center;
     z-index:9999;
 }
+@media (min-width: 1200px){
+    #toggle-menu{
+        display: none;
+    }
+    
+}
+
 
 /* default css end */
+
+/* Scroll Button Styling Start */
+.scroll-div-btn {
+    display: flex;
+    z-index: 2;
+    position: absolute;
+    top:95%;
+    left: 50%;
+    transform: translate(-50%,-95%);
+    flex-direction: column;
+    align-items: center;
+}
+.scroll-div-txt{
+    font-size: 0.9rem;
+    color:white;
+    transition: 0.2s;
+}
+.scroll-div-txt:hover{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Scroll Button Styling End */
+
 
 /* Landing Page Home Container */
 
 .home-container {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(5, 5, 5);
-    padding: 3rem 10rem;
+    height: 95vh;
+    background-color: #24262b;
+    padding: 0rem 6rem;
     display: flex;
     flex-direction: row;
 }
@@ -74,4 +105,58 @@ html{
 .home-txt>span{
     color:#f3223b;
     text-transform: uppercase;
+}
+.whyus-container {
+    height: 60vh;
+    padding: 0rem 6rem;
+    display: flex;
+    flex-direction: row;
+}
+.whyus-txt{
+    margin: 3rem 0;
+    text-align: center;
+    color:#24262b;
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+    word-spacing: 0.05rem;
+}
+.whyus-txt>span{
+    color:#f3223b;
+    text-transform: uppercase;
+}
+.whyus-container>.left-column{
+    flex: 1;
+    margin: auto 0;
+}
+.whyus-container>.right-column{
+    flex: 1;
+    padding-left: 5rem;
+}
+.whyus-container>.left-column>.home-txt{
+    color:#24262b;
+    text-transform: capitalize;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    line-height:5rem;
+}
+.whyus-container>.left-column>.home-txt{
+    color:#24262b;
+    text-transform: capitalize;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    line-height:4rem;
+    padding: 0 10%;
+}
+.whyus-container>.left-column>.home-txt>span{
+    color:#f3223b;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.non-veg,.veg{
+    text-transform: capitalize;
+}
+.veg{
+    background-color: #228B22 !important;
 }
