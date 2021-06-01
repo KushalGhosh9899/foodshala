@@ -19,8 +19,8 @@ require 'header.php';
             <input type="text" name="menu-name" class="form-control input-box" placeholder="Enter Menu Name" required />
             <select value="" name="foodtype" class="form-control" required>
                 <option value="" selected hidden disabled>Select Food Type</option>
-                <option value="veg">Veg</option>
-                <option value="nonveg">Non Veg</option>
+                <option value="Veg">Veg</option>
+                <option value="Non Veg">Non Veg</option>
             </select>
             <input type="text" name="price" class="form-control input-box" placeholder="Enter Price in Rs" required />
             <input type="text" name="description" class="form-control input-box" placeholder="Enter Menu Description" required />
