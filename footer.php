@@ -4,7 +4,7 @@
 
     function loadPreloader() {
         preloader.style.display = 'none';
-    }
+    }    
 </script>
 
 <!-- Start Footer Section -->
@@ -150,33 +150,13 @@
                             </button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="modal-add-cart-product-img">
-                                        <img class="img-fluid" src="assets/images/product/default/home-3/default-1.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
-                                        successfully!</div>
-                                    <div class="modal-add-cart-product-cart-buttons">
-                                        <a href="cart">View Cart</a>
-                                        <a href="checkout">Checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5 modal-border">
-                            <ul class="modal-add-cart-product-shipping-info">
-                                <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
-                                        Cart.</strong></li>
-                                <li> <strong>TOTAL PRICE: </strong> <span>$187.00</span></li>
-                                <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUE
-                                        SHOPPING</a></li>
-                            </ul>
-                        </div>
+                    <div class="row" style="flex-direction:column;align-items: center; justify-content: center;">
+                        <h1 style="text-align: center;">
+                            Product Added to Cart Successfully
+                        </h1>
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ruryzm9h.json" background="transparent" speed="1" style="width: 100%; height: 40vh;" loop autoplay></lottie-player>
+                        <a style="width:30%" href="#" class="btn btn-lg btn-black-default-hover">Continue Shopping</a>
                     </div>
                 </div>
             </div>

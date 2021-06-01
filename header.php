@@ -34,6 +34,7 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="styles/login.css">
 
 
 </head>
@@ -66,7 +67,7 @@
                     </li>
 
                     <li class="has-dropdown">
-                      <a class="active main-menu-link" href="shop-full-width">Shop <i class="fa fa-angle-down"></i></a>
+                      <a class="active main-menu-link" href="shop-full-width">Menu <i class="fa fa-angle-down"></i></a>
                       <!-- Sub Menu -->
                       <ul class="sub-menu">
                         <li><a href="index">All Dishes</a></li>
@@ -82,6 +83,9 @@
                     <li>
                       <a href="contact-us">Contact Us</a>
                     </li>
+                    <li>
+                      <a href="login">Login</a>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -94,6 +98,16 @@
                     <i class="icon-bag"></i>
                     <span class="item-count">3</span>
                   </a>
+                </li>               
+                <li>
+                  <a href="login">
+                    <i class="icon-power"></i>
+                  </a>
+                </li>               
+                <li>
+                  <a href="login">
+                    <i class="icon-user"></i>
+                  </a>
                 </li>
                 <li>
                   <a href="#search">
@@ -104,7 +118,7 @@
                   <a href="#offcanvas-about" class="offacnvas offside-about offcanvas-toggle">
                     <i class="icon-menu"></i>
                   </a>
-                </li>
+                </li> 
               </ul>
               <!-- End Header Action Link -->
             </div>
@@ -185,7 +199,7 @@
               <a href="index"><span>Home</span></a>
             </li>
             <li>
-              <a href="#"><span>Shop</span></a>
+              <a href="#"><span>Menu</span></a>
               <ul class="mobile-sub-menu">
                 <li><a href="my-account">My Account</a></li>
               </ul>
