@@ -25,7 +25,11 @@ require 'header.php';
             <input type="text" name="price" class="form-control input-box" placeholder="Enter Price in Rs" required />
             <input type="text" name="description" class="form-control input-box" placeholder="Enter Menu Description" required />
             
-            <input type="file" class="form-control" name="productImage">
+            <input type="file" class="form-control" name="productImage" required>
+            <input type="file" class="form-control" name="productImage2" required>
+            <input type="file" class="form-control" name="productImage3" required>
+            <input type="file" class="form-control" name="productImage4" required>
+            <input type="file" class="form-control" name="productImage5" required>
             <button type="submit" name="add-dish" class="formButton">Add to Menu</button>
         </form>
     </div>

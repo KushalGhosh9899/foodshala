@@ -20,7 +20,7 @@ require 'header.php';
                 <span class="text-center">
                 </span>
                 <div class="text-center">
-                    <h1 class="title">Food Shala</h1>
+                    <h1 class="login-title">Food Shala</h1>
                     <p class="sub-title">One Place for Ordering All Types of Dishes</p>
                     <p class="sub-title">Sign up now</p>
                 </div>

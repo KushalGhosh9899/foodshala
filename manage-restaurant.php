@@ -76,28 +76,28 @@ require 'header.php';
         <div class="column" onclick="window.location.href='add-dish'">
             <div class="card">
                 <h3>Add Menu Item</h3>
-                <img src="images/add-dishes.png" alt="data">
+                <img class="img-restaurant" src="images/add-dishes.png" alt="data">
             </div>
         </div>
 
         <div class="column" onclick="window.location.href='view-orders'">
             <div class="card">
                 <h3>View Orders</h3>
-                <img src="images/orders.png" alt="data">
+                <img class="img-restaurant" src="images/orders.png" alt="data">
             </div>
         </div>
 
         <div class="column" onclick="window.location.href='view-cancelled'">
             <div class="card">
                 <h3>View Cancelled Orders</h3>
-                <img src="images/cancel-orders.png" alt="data">
+                <img class="img-restaurant" src="images/cancel-orders.png" alt="data">
             </div>>
         </div>
 
         <div class="column" onclick="window.location.href='view-all-dish'">
             <div class="card">
                 <h3>All Dishes</h3>
-                <img src="images/all-dishes.png" alt="data">
+                <img class="img-restaurant" src="images/all-dishes.png" alt="data">
             </div>
         </div>
 

@@ -168,3 +168,11 @@ html{
     justify-content: center;
     align-items: center;
 }
+.product-image-veg{
+    width:100% !important;
+    height: 15vw !important;
+    object-fit: cover !important;
+}
+.section-inner-bg-white{
+    background-color: white!important;
+}
