@@ -1,0 +1,251 @@
+.container {
+    padding: 100px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Remove extra left and right margins, due to padding */
+
+.row {
+    margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img {
+    margin-top: 2rem;
+    width: 60%;
+    height: 60%;
+}
+
+/* Responsive columns */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.container {
+    padding: 30px;
+}
+
+/* Style the counter cards */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    height: 300px;
+    transition: transform .2s;
+}
+
+.card:hover {
+    cursor: pointer;
+    -ms-transform: scale(1.10);
+    /* IE 9 */
+    -webkit-transform: scale(1.10);
+    /* Safari 3-8 */
+    transform: scale(1.10);
+}
+
+.hreftext {
+    text-decoration: none;
+    color: black;
+}
+
+/*Nav bar Links*/
+
+.nav-a {
+    color: white;
+    font-size: 20px;
+}
+
+/* stats Styling start from here */
+
+.wrapper {
+    position: relative;
+}
+
+.heading {
+    font-weight: bold;
+    margin: 25px 0;
+    font-size: 3rem;
+}
+
+.dashboard-stat {
+    position: relative;
+    display: block;
+    margin: 0 0 25px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.dashboard-stat .visual {
+    width: 80px;
+    height: 80px;
+    display: block;
+    float: left;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    line-height: 35px;
+}
+
+.dashboard-stat .visual>i {
+    margin-left: -15px;
+    font-size: 110px;
+    line-height: 110px;
+    color: #fff;
+    opacity: .1;
+}
+
+.dashboard-stat .details {
+    position: absolute;
+    right: 15px;
+    padding-right: 15px;
+    color: #fff;
+}
+
+.dashboard-stat .details .number {
+    padding-top: 25px;
+    text-align: right;
+    font-size: 34px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.dashboard-stat .details .number .desc {
+    text-transform: capitalize;
+    text-align: right;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 300;
+}
+
+.dashboard-stat.blue {
+    background-color: #337ab7;
+}
+
+.dashboard-stat.red {
+    background-color: #e7505a;
+}
+
+.dashboard-stat.purple {
+    background-color: #8e44ad;
+}
+
+.dashboard-stat.hoki {
+    background-color: #67809f;
+}
+
+/* Form Styling */
+
+.heading {
+    margin-left: auto;
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 2.8em;
+    color: black;
+}
+
+.contain {
+    width: 30vw;
+    margin: auto;
+    height: fit-content!important;
+}
+
+.formStyle {
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ABB2B9;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    font-size: 1em;
+    font-weight: 100;
+    color: black;
+}
+
+.formButton {
+    margin: 1rem auto;
+    background-color: white;
+    display: block;
+    color: #f3223b;
+    border: 1px solid #f3223b;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 44px;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.formButton:hover {
+    background-color: #f3223b;
+    color: white;
+}
+
+.formButton:active {
+    position: relative;
+    top: 3px;
+}
+
+/*To remove the outline that appears on clicking the input textbox*/
+
+input:focus {
+    outline: none;
+}
+
+/* To format the placeholder text color */
+
+::-webkit-input-placeholder {
+    color: #ABB2B9;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: black;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: black;
+}
+
+:-ms-input-placeholder {
+    color: black;
+}
+.back-btn{
+    font-size: 3rem;
+    margin-left: 25%;
+}

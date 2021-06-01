@@ -4,8 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 
-
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
   <meta charset="UTF-8">
@@ -38,6 +37,7 @@ session_start();
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/restaurant.css">
 
 
 </head>
@@ -86,9 +86,31 @@ session_start();
                     <li>
                       <a href="contact-us">Contact Us</a>
                     </li>
-                    <li>
-                      <a href="signup">Signup</a>
-                    </li>
+                    <?php
+                    if (isset($_SESSION['userId'])&&isset($_SESSION['type'])) {
+                      if($_SESSION['type']=='user'){
+                        echo '
+                        <li>
+                          <a href="my-account">My Account</a>
+                        </li>
+                        ';
+                      }
+                      else if($_SESSION['type']=='restaurant'){
+                        echo '
+                        <li>
+                          <a href="manage-restaurant">Manage Restaurant</a>
+                        </li>
+                        ';                        
+                      }
+                    } else {
+                      echo '
+                      <li>
+                        <a href="login">login</a>
+                      </li>
+                      ';
+                    }
+                    ?>
+
                   </ul>
                 </nav>
               </div>
@@ -101,27 +123,41 @@ session_start();
                     <i class="icon-bag"></i>
                     <span class="item-count">3</span>
                   </a>
-                </li>               
-                <li>
-                  <a href="logout">
-                    <i class="icon-power"></i>
-                  </a>
-                </li>               
-                <li>
-                  <a href="signup">
-                    <i class="icon-user"></i>
-                  </a>
                 </li>
                 <li>
                   <a href="#search">
                     <i class="icon-magnifier"></i>
                   </a>
                 </li>
+                <?php
+                if (isset($_SESSION['userId'])) {
+                  echo '                      
+                      <li>
+                        <a href="myaccount">
+                          <i class="icon-user"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="logout">
+                          <i class="icon-power"></i>
+                        </a>
+                      </li>
+                      ';
+                } else {
+                  echo '
+                        <li>
+                        <a href="login">
+                          <i class="icon-user"></i>
+                        </a>
+                      </li>
+                      ';
+                }
+                ?>
                 <li id="toggle-menu">
                   <a href="#offcanvas-about" class="offacnvas offside-about offcanvas-toggle">
                     <i class="icon-menu"></i>
                   </a>
-                </li> 
+                </li>
               </ul>
               <!-- End Header Action Link -->
             </div>
