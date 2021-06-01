@@ -26,22 +26,22 @@ require 'header.php';
                 </div>
                 <!-- login form starts -->
                 <div class="form-group d-block mx-auto">
-                    <form action="" method="post" class="mx-auto" autocomplete="off">
-                        <input type="text" class="form-control input-box" name="userName" placeholder="Enter your Full Name" autocomplete="off" required autocomplete="off">
+                    <form action="includes/signup.inc" method="post" class="mx-auto" autocomplete="off">
+                        <input type="text" name="name" class="form-control input-box" name="userName" placeholder="Enter your Full Name" autocomplete="off" required autocomplete="off">
                         
-                        <input type="email" class="form-control input-box" name="userEmail" id="user-email-id" aria-describedby="helpEmail" placeholder="Enter your email ID" autocomplete="off" required autocomplete="off">
+                        <input type="email" name="mail"  class="form-control input-box" name="userEmail" id="user-email-id" aria-describedby="helpEmail" placeholder="Enter your email ID" autocomplete="off" required autocomplete="off">
                         
-                        <select class="form-control">
+                        <select class="form-control" name="preference" required>
                             <option value="" selected disabled hidden>Select Your Preference</option>
                             <option value="veg">Veg</option>
                             <option value="nonveg">Non Veg</option>
                         </select>
-                        <select class="form-control">
+                        <select class="form-control" name="accountType" required>
                             <option value="" selected disabled hidden>Select Account Type</option>
                             <option value="user">User</option>
                             <option value="restaurant">Restaurant</option>
                         </select>
-                        <input type="password" class="form-control input-box" name="userPW" id="createPW" placeholder="Create your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#?!@$%^&*-]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete="off">
+                        <input type="password" name="pwd" class="form-control input-box" name="userPW" id="createPW" placeholder="Create your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#?!@$%^&*-]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete="off">
                         <div id="pwErrMessage">
                             <h6>Password must contain the following:</h6>
                             <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -54,7 +54,7 @@ require 'header.php';
                         <div class="text-center">
                             <div id="CheckPassword">
                             </div>
-                            <button type="submit" class="btn btn-primary mt-3" id="loginBtn">Sign up</button>
+                            <button type="submit" name="signup-submit" class="btn btn-primary mt-3" id="loginBtn">Sign up</button>
                         </div>
                     </form>
 

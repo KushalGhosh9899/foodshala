@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,7 +87,7 @@
                       <a href="contact-us">Contact Us</a>
                     </li>
                     <li>
-                      <a href="login">Login</a>
+                      <a href="signup">Signup</a>
                     </li>
                   </ul>
                 </nav>
@@ -100,12 +103,12 @@
                   </a>
                 </li>               
                 <li>
-                  <a href="login">
+                  <a href="logout">
                     <i class="icon-power"></i>
                   </a>
                 </li>               
                 <li>
-                  <a href="login">
+                  <a href="signup">
                     <i class="icon-user"></i>
                   </a>
                 </li>

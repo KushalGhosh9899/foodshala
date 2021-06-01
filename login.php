@@ -26,13 +26,12 @@ require 'header.php';
                 </div>
                 <!-- login form starts -->
                 <div class="form-group d-block mx-auto">
-                    <form action="" method="post" class="mx-auto" autocomplete="off">
-                        <input type="email" class="form-control input-box" name="userEmail" aria-describedby="helpEmail" placeholder="Enter your email ID" autocomplete="off" required autocomplete="off">
-                        <input type="password" class="form-control input-box" name="userPW" placeholder="Create your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#?!@$%^&*-]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete="off">
+                    <form action="includes/login.inc" method="post" class="mx-auto" autocomplete="off">
+                        <input type="email" name="mailuid" class="form-control input-box" name="userEmail" aria-describedby="helpEmail" placeholder="Enter your email ID" autocomplete="off" required autocomplete="off">
+                        <input type="password" name="pwd" class="form-control input-box" name="userPW" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#?!@$%^&*-]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete="off">
 
-                        <input type="password" class="form-control input-box" name="userConfirmPW" placeholder="Confirm your password" required>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary mt-3" id="loginBtn">Log in</button>
+                            <button name="login-submit" type="submit" class="btn btn-primary mt-3" id="loginBtn">Log in</button>
                         </div>
                     </form>
 

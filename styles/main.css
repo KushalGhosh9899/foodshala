@@ -158,6 +158,13 @@ html{
     text-transform: capitalize;
 }
 .veg{
-    background-color: #228B22 !important;
-    
+    background-color: #228B22 !important;    
+}
+.success-container{
+    margin: 5% 0;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
