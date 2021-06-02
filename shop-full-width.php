@@ -109,15 +109,25 @@ require 'header.php';
                                                             echo '
                                                                 <div class="action-link">
                                                                     <div class="action-link-left">
-                                                                        <a href="#">Order Now</a>
+                                                                        
+                                                                    <div class="action-link-right">
+
+                                                                        <form action="includes/order-now" method="POST">
+                                                                            <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
+                                                                            <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                            <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                            <input type="hidden" value="' . $row['products'] . '" name="product-ID">
+                                                                            <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="order-now-btn">Order Now</button>                                                                
+                                                                        </form> 
+
                                                                     </div>
                                                                     <div class="action-link-right">
                                                                         <form action="includes/add-to-cart.inc" method="POST">
                                                                     <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
                                                                     <input type="hidden" value="' . $row['productName'] . '" name="product-name">
                                                                     <input type="hidden" value="' . $row['price'] . '" name="product-price">
-                                                                    <input type="hidden" value="'.$row['products'].'" name="product-ID">
-                                                                        <button type=""submit"" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
+                                                                    <input type="hidden" value="' . $row['products'] . '" name="product-ID">
+                                                                        <button type="submit" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
                                                                     
                                                                     </form>                                                                 
                                                                     </div>
@@ -125,7 +135,7 @@ require 'header.php';
                                                                 </div>
                                                                 <div class="content">
                                                                 <div class="content-left">
-                                                                    <h6 class="title"><a href="product-details-default.html">' . $row['productName'] . '</a></h6>
+                                                                    <h6 class="title"><a href="product-details-default?pid='.$row['products'].'">' . $row['productName'] . '</a></h6>
                                                                     <ul class="review-star">
                                                                         <li class="fill"><i class="ion-android-star"></i>
                                                                         </li>
@@ -181,15 +191,21 @@ require 'header.php';
                                                             echo '
                                                                 <div class="action-link">
                                                                     <div class="action-link-left">
-                                                                        <a href="#">Order Now</a>
+                                                                        <form action="includes/order-now" method="POST">
+                                                                            <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
+                                                                            <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                            <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                            <input type="hidden" value="' . $row['products'] . '" name="product-ID">
+                                                                            <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="order-now-btn">Order Now</button>                                                                
+                                                                        </form> 
                                                                     </div>
                                                                     <div class="action-link-right">
                                                                         <form action="includes/add-to-cart.inc" method="POST">
                                                                     <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
                                                                     <input type="hidden" value="' . $row['productName'] . '" name="product-name">
                                                                     <input type="hidden" value="' . $row['price'] . '" name="product-price">
-                                                                    <input type="hidden" value="'.$row['products'].'" name="product-ID">
-                                                                        <button type=""submit"" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
+                                                                    <input type="hidden" value="' . $row['products'] . '" name="product-ID">
+                                                                        <button type="submit" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
                                                                     
                                                                     </form>                                                                 
                                                                     </div>
@@ -266,7 +282,7 @@ require 'header.php';
                                                                                 <form action="includes/add-to-cart.inc" method="POST">
                                                                                 <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
                                                                                 <input type="hidden" value="' . $row['productName'] . '" name="product-name">
-                                                                                <input type="hidden" value="'.$row['products'].'" name="product-ID">
+                                                                                <input type="hidden" value="' . $row['products'] . '" name="product-ID">
                                                                                 <input type="hidden" value="' . $row['price'] . '" name="product-price">
                                                                                     <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="add-to-cart">+ Add To Cart</button>
                                                                                 
@@ -288,12 +304,12 @@ require 'header.php';
                                                             echo '
                                                         <div class="col-12">
                                                             <div class="product-list-single product-color--golden">
-                                                                <a href="product-details-default.html" class="product-list-img-link product-image-non-veg">
+                                                                <a href="product-details-default?pid='.$row['products'].'" class="product-list-img-link product-image-non-veg">
                                                                     <img class="image-fluid product-image-non-veg-fluid" src="' . $row['productImage'] . '" alt="">
                                                                     <img class="image-fluid product-image-non-veg-fluid" src="' . $row['image3'] . '" alt="">
                                                                 </a>
                                                                 <div class="product-list-content">
-                                                                    <h5 class="product-list-link"><a href="product-details-default.html">' . $row['productName'] . '</a></h5>
+                                                                    <h5 class="product-list-link"><a href="product-details-default?pid='.$row['products'].'">' . $row['productName'] . '</a></h5>
                                                                     <ul class="review-star">
                                                                         <li class="fill"><i class="ion-android-star"></i></li>
                                                                         <li class="fill"><i class="ion-android-star"></i></li>
@@ -305,10 +321,10 @@ require 'header.php';
                                                                     <p><b>' . $row['foodType'] . '</b><br>' . $row['description'] . '</p>
                                                                     <div class="product-action-icon-link-list">
                                                                     <form action="includes/add-to-cart.inc" method="POST">
-                                                                    <input type="hidden" value="'.$row['productImage'].'" name="product-image">
-                                                                    <input type="hidden" value="'.$row['productName'].'" name="product-name">
-                                                                    <input type="hidden" value="'.$row['products'].'" name="product-ID">
-                                                                    <input type="hidden" value="'.$row['price'].'" name="product-price">
+                                                                    <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
+                                                                    <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                    <input type="hidden" value="' . $row['products'] . '" name="product-ID">
+                                                                    <input type="hidden" value="' . $row['price'] . '" name="product-price">
                                                                         <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="add-to-cart">+ Add To Cart</button>
                                                                     
                                                                     </form>
