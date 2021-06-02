@@ -176,3 +176,13 @@ html{
 .section-inner-bg-white{
     background-color: white!important;
 }
+.product-image-non-veg{
+    width:30% !important;
+    height: 15vw !important;
+    object-fit: cover !important;
+}
+.product-image-non-veg-fluid{
+    width:100% !important;
+    height: 25vh !important;
+    object-fit: cover !important;
+}

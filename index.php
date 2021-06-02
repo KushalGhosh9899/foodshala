@@ -394,7 +394,7 @@ require 'header.php';
                                     <div class="image-box">
                                         <a href="product-details-default.html" class="image-link">
                                             <img class="product-image-veg" src="'.$row['productImage'].'" alt="">
-                                            <img class="product-image-veg"  src="'.$row['image3'].'" alt="">
+                                            <img class="product-image-veg" src="'.$row['image3'].'" alt="">
                                         </a>
                                         ';
                                         if($row['foodType']=='Veg'){
