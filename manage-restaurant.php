@@ -106,7 +106,7 @@ if ($conn) {
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span><?php echo $totalrevenue; ?></span>
+                        <span>Rs <?php echo $totalrevenue; ?></span>
                     </div>
                     <div class="desc">Total Revenue</div>
                 </div>
