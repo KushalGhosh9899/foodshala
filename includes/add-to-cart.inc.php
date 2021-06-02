@@ -21,13 +21,16 @@ if (isset($_POST['add-to-cart'])) {
             mysqli_stmt_bind_param($stmt, "ssiis", $productName, $productImage, $productID, $productPrice, $userid);
             mysqli_stmt_execute($stmt);
             header("Location: ../shop-full-width?product-successfully-added-to-cart");
+            exit();
         } elseif ($_SESSION['type'] == 'restaurant') {
 
             header("Location: ../shop-full-width?you-cannot-order-products");
+            exit();
         }
     }
     else if(!isset($_SESSION['userId'])){
         header("Location: ../login");
+        exit();
     }
 } else {
     header("Location: ../index");

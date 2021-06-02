@@ -7,6 +7,7 @@ require_once 'includes/db.inc.php';
     <title>
         View All Menu Item | Foodshala
     </title>
+    <link rel="stylesheet" href="styles/restaurant.css">
 </head>
 <div>
     <a href="manage-restaurant" class="back-btn"><i class="ion-android-arrow-back"></i></a>

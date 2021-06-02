@@ -37,7 +37,6 @@ session_start();
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="styles/login.css">
-  <link rel="stylesheet" href="styles/restaurant.css">
 
 
 </head>
@@ -383,7 +382,6 @@ session_start();
           <span class="offcanvas-cart-total-price-value">Rs ' . $data['sumcart'] . '</span>
         </div>
         <ul class="offcanvas-cart-action-button">
-          <li><a href="cart" class="btn btn-block btn-pink">View Cart</a></li>
           <li><a href="checkout" class=" btn btn-block btn-pink mt-5">Checkout</a></li>
         </ul>';
         } else if ($result->num_rows == 0) {

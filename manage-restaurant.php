@@ -6,6 +6,7 @@ require 'header.php';
     <title>
         Manage Restaurant | Foodshala
     </title>
+    <link rel="stylesheet" href="styles/restaurant.css">
 </head>
 
 <div class="wrapper container">

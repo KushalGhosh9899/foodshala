@@ -6,6 +6,7 @@ require 'header.php';
     <title>
         Add Menu Item | Foodshala
     </title>
+    <link rel="stylesheet" href="styles/restaurant.css">
 </head>
 
 <div>
@@ -24,7 +25,7 @@ require 'header.php';
             </select>
             <input type="text" name="price" class="form-control input-box" placeholder="Enter Price in Rs" required />
             <input type="text" name="description" class="form-control input-box" placeholder="Enter Menu Description" required />
-            
+
             <input type="file" class="form-control" name="productImage" required>
             <input type="file" class="form-control" name="productImage2" required>
             <input type="file" class="form-control" name="productImage3" required>
