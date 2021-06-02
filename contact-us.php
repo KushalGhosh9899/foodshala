@@ -81,25 +81,25 @@ require 'header.php';
                             <div class="col-lg-6">
                                 <div class="default-form-box mb-20">
                                     <label for="contact-name">Name</label>
-                                    <input name="name" type="text" id="contact-name">
+                                    <input name="name" type="text" id="contact-name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="default-form-box mb-20">
                                     <label for="contact-email">Email</label>
-                                    <input name="email" type="email" id="contact-email">
+                                    <input name="email" type="email" id="contact-email" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="default-form-box mb-20">
                                     <label for="contact-subject">Subject</label>
-                                    <input name="subject" type="text" id="contact-subject">
+                                    <input name="subject" type="text" id="contact-subject" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="default-form-box mb-20">
                                     <label for="contact-message">Your Message</label>
-                                    <textarea name="message" id="contact-message" cols="30" rows="10"></textarea>
+                                    <textarea name="message" id="contact-message" cols="30" rows="10" required></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">

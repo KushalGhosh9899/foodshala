@@ -33,10 +33,9 @@
                             <h5 class="title">MY ACCOUNT</h5>
                             <ul class="footer-nav">
                                 <li><a href="my-account">My account</a></li>
-                                <li><a href="wishlist">Wishlist</a></li>
-                                <li><a href="privacy-policy">Privacy Policy</a></li>
-                                <li><a href="faq">Frequently Questions</a></li>
-                                <li><a href="#">Order History</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Frequently Questions</a></li>
+                                <li><a href="my-account">Order History</a></li>
                             </ul>
                         </div>
                         <!-- End Footer Single Item -->
@@ -46,11 +45,10 @@
                         <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up" data-aos-delay="400">
                             <h5 class="title">CATEGORIES</h5>
                             <ul class="footer-nav">
-                                <li><a href="#">Decorative</a></li>
-                                <li><a href="#">Kitchen utensils</a></li>
-                                <li><a href="#">Chair & Bar stools</a></li>
-                                <li><a href="#">Sofas and Armchairs</a></li>
-                                <li><a href="#">Interior lighting</a></li>
+                                <li><a href="veg-menu">Veg</a></li>
+                                <li><a href="non-veg-menu">Non Veg</a></li>
+                                <li><a href="shop-full-width">All Menu</a></li>
+                                <li><a href="#">All dishes</a></li>
                             </ul>
                         </div>
                         <!-- End Footer Single Item -->
@@ -60,12 +58,11 @@
                         <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up" data-aos-delay="600">
                             <h5 class="title">ABOUT US</h5>
                             <div class="footer-about">
-                                <p>We are a team of designers and developers that create high quality Magento,
-                                    Prestashop, Opencart.</p>
+                                <p>Foodshala is for Foodies who want food at their doorstep with very fast delivery and having all kinds of variety.</p>
 
                                 <address>
                                     <span>Address: Your address goes here.</span>
-                                    <span>Email: demo@example.com</span>
+                                    <span>Email: kushalghosh9899@gmail.com</span>
                                 </address>
                             </div>
                         </div>
@@ -95,10 +92,10 @@
                         <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="200">
                             <h4 class="title">DON'T MISS OUT ON THE LATEST</h4>
                             <div class="form-newsletter">
-                                <form action="#" method="post">
+                                <form action="includes/subscribe-news-letter" method="post">
                                     <div class="form-fild-newsletter-single-item input-color--pink">
-                                        <input type="email" placeholder="Your email address..." required>
-                                        <button type="submit">SUBSCRIBE!</button>
+                                        <input type="email" name="email" placeholder="Your email address..." required>
+                                        <button type="submit" name="subscribe-btn">SUBSCRIBE!</button>
                                     </div>
                                 </form>
                             </div>
@@ -115,7 +112,8 @@
                 <div class="row justify-content-between align-items-center align-items-center flex-column flex-md-row mb-n6">
                     <div class="col-auto mb-6">
                         <div class="footer-copyright">
-                            <p class="copyright-text">&copy; 2021 <a href="index">therankme</a>. Made with <i class="fa fa-heart text-danger"></i> by <a href="https://therankme.com/" target="_blank">therankme</a> </p>
+                            <p class="copyright-text">&copy; 2021 <a href="index">foodshala</a>. Made with <i class="fa fa-heart text-danger"></i> by 
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kushalghosh9899@gmail.com" target="_blank">Kushal Ghosh</a> </p>
 
                         </div>
                     </div>

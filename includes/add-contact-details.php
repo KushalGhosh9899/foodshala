@@ -12,7 +12,7 @@ if (isset($_POST['submit-contact'])) {
     mysqli_stmt_prepare($stmt, $sql);
     mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $subject, $details);
     mysqli_stmt_execute($stmt);
-    header("Location: ../contact-us?Successfully_send_message");
+    header("Location: ../contact-us?Successfully-send-message");
 } else {
     header("Location: ../index");
 }
