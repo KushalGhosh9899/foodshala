@@ -387,14 +387,27 @@ session_start();
           <li><a href="checkout" class=" btn btn-block btn-pink mt-5">Checkout</a></li>
         </ul>';
         } else if ($result->num_rows == 0) {
-          echo '
-          <br><br>
-          <img class="empty-cart-img-section" src="images/empty-cart.png" />
-          <br><br>
-          <h4 style="text-align:center;">Your Cart is Empty</h4>
-          <ul class="offcanvas-cart-action-button">
-            <li><a href="shop-full-width" class=" btn btn-block btn-pink mt-5">Continue Shopping</a></li>
-          </ul>';
+          if ($_SESSION['type']=='restaurant'){
+            echo '
+            <br><br>
+            <img class="empty-cart-img-section" src="images/empty-cart.png" />
+            <br><br>
+            <h4 style="text-align:center;">You cannot Order Products</h4>
+            <ul class="offcanvas-cart-action-button">
+              <li><a href="shop-full-width" class=" btn btn-block btn-pink mt-5">View Products</a></li>
+            </ul>';
+
+          }else if($_SESSION['type']=='user'){
+            echo '
+            <br><br>
+            <img class="empty-cart-img-section" src="images/empty-cart.png" />
+            <br><br>
+            <h4 style="text-align:center;">Your Cart is Empty</h4>
+            <ul class="offcanvas-cart-action-button">
+              <li><a href="shop-full-width" class=" btn btn-block btn-pink mt-5">Continue Shopping</a></li>
+            </ul>';
+
+          }
         }
       }
       ?>
