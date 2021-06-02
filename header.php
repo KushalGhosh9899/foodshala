@@ -120,7 +120,19 @@ session_start();
                 <li>
                   <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                     <i class="icon-bag"></i>
-                    <span class="item-count">3</span>
+                    <span class="item-count">
+                      <?php
+                      if (isset($_SESSION['userId'])) {
+                        require 'includes/db.inc.php';
+                        $id = $_SESSION['userId'];
+                        $sql = "SELECT * FROM cart WHERE userID='$id'";
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_num_rows($result);
+                        echo $row;
+                      } else {
+                        echo "0";
+                      } ?>
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -195,15 +207,20 @@ session_start();
                 </a>
               </li>
               <li>
-                <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                  <i class="icon-heart"></i>
-                  <span class="item-count">3</span>
-                </a>
-              </li>
-              <li>
                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                   <i class="icon-bag"></i>
-                  <span class="item-count">3</span>
+                  <span class="item-count"><?php
+                                            if (isset($_SESSION['userId'])) {
+                                              require 'includes/db.inc.php';
+                                              $id = $_SESSION['userId'];
+                                              $sql = "SELECT * FROM cart WHERE userID='$id'";
+                                              $result = mysqli_query($conn, $sql);
+                                              $row = mysqli_num_rows($result);
+                                              echo $row;
+                                            } else {
+                                              echo "0";
+                                            } ?>
+                  </span>
                 </a>
               </li>
               <li>
@@ -326,16 +343,17 @@ session_start();
     <!-- Start  Offcanvas Addcart Wrapper -->
     <div class="offcanvas-add-cart-wrapper">
       <h4 class="offcanvas-title">Shopping Cart</h4>
-      <ul class="offcanvas-cart">
-        <?php
-        $userid = $_SESSION['userId'];
-        require_once 'includes/db.inc.php';
-        $sql = "SELECT * FROM cart where userID='$userid'";
-        $result = $conn->query($sql);
-        if ($conn) {
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              echo '
+
+      <?php
+      $userid = $_SESSION['userId'];
+      require_once 'includes/db.inc.php';
+      $sql = "SELECT * FROM cart where userID='$userid'";
+      $result = $conn->query($sql);
+      if ($conn) {
+        if ($result->num_rows > 0) {
+          echo '<ul class="offcanvas-cart">';
+          while ($row = $result->fetch_assoc()) {
+            echo '
                 <li class="offcanvas-cart-item-single">
                   <div class="offcanvas-cart-item-block">
                     <a href="product-details-default?pid=' . $row['productID'] . '" class="offcanvas-cart-item-image-link">
@@ -353,23 +371,33 @@ session_start();
                   </div>
                 </li>
             ';
-            }
           }
-        }
-        $query = "select SUM(price) as 'sumcart' from cart WHERE userID='$userid'";
-        $res = mysqli_query($conn, $query);
-        $data = mysqli_fetch_array($res);
-        echo '
+
+          $query = "select SUM(price) as 'sumcart' from cart WHERE userID='$userid'";
+          $res = mysqli_query($conn, $query);
+          $data = mysqli_fetch_array($res);
+          echo '
         </ul>
         <div class="offcanvas-cart-total-price">
           <span class="offcanvas-cart-total-price-text">Subtotal:</span>
-          <span class="offcanvas-cart-total-price-value">Rs '.$data['sumcart'].'</span>
-        </div>';
-        ?>
+          <span class="offcanvas-cart-total-price-value">Rs ' . $data['sumcart'] . '</span>
+        </div>
         <ul class="offcanvas-cart-action-button">
           <li><a href="cart" class="btn btn-block btn-pink">View Cart</a></li>
           <li><a href="checkout" class=" btn btn-block btn-pink mt-5">Checkout</a></li>
-        </ul>
+        </ul>';
+        } else if ($result->num_rows == 0) {
+          echo '
+          <br><br>
+          <img class="empty-cart-img-section" src="images/empty-cart.png" />
+          <br><br>
+          <h4 style="text-align:center;">Your Cart is Empty</h4>
+          <ul class="offcanvas-cart-action-button">
+            <li><a href="shop-full-width" class=" btn btn-block btn-pink mt-5">Continue Shopping</a></li>
+          </ul>';
+        }
+      }
+      ?>
     </div>
     <!-- End  Offcanvas Addcart Wrapper -->
 
