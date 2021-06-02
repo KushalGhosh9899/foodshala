@@ -56,7 +56,7 @@ require_once 'includes/db.inc.php';
                                         if ($conn) {
                                             if ($result1->num_rows > 0) {
                                                 while ($row1 = $result1->fetch_assoc()) {
-                                                    echo'
+                                                    echo '
                                                     ' . $row1['fname'] . ' ' . $row1['lname'] . '<br>
                                                     Mobile: ' . $row1['phone'] . '<br>
                                                     Email: ' . $row1['email'] . '<br>

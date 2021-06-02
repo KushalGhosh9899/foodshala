@@ -79,7 +79,7 @@ session_start();
                     </li>
 
                     <li>
-                      <a href="about-us">About Us</a>
+                      <a href="#">About Us</a>
                     </li>
 
                     <li>
@@ -253,7 +253,7 @@ session_start();
                 <li><a href="my-account">My Account</a></li>
               </ul>
             </li>
-            <li><a href="about-us">About Us</a></li>
+            <li><a href="#">About Us</a></li>
             <li><a href="contact-us">Contact Us</a></li>
           </ul>
         </div> <!-- End Mobile Menu Nav -->
