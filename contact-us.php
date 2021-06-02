@@ -11,7 +11,7 @@ require 'header.php';
                     <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                         <nav aria-label="breadcrumb">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index">Home</a></li>
                                 <li class="active" aria-current="page">Contact Us</li>
                             </ul>
                         </nav>
@@ -21,21 +21,6 @@ require 'header.php';
         </div>
     </div>
 </div> <!-- ...:::: End Breadcrumb Section:::... -->
-
-<!-- ...::::Start Map Section:::... -->
-<div class="map-section" data-aos="fade-up" data-aos-delay="0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="mapouter">
-                    <div class="gmap_canvas">
-                        <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=121%20King%20St%2C%20Melbourne%20VIC%203000%2C%20Australia&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> <!-- ...::::End  Map Section:::... -->
 
 <!-- ...::::Start Contact Section:::... -->
 <div class="contact-section">
@@ -91,7 +76,7 @@ require 'header.php';
             <div class="col-lg-8">
                 <div class="contact-form section-top-gap-100" data-aos="fade-up" data-aos-delay="200">
                     <h3>Get In Touch</h3>
-                    <form id="contact-form" action="https://htmlmail.hasthemes.com/nazmul/mail.php" method="post">
+                    <form action="includes/add-contact-details" method="post">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="default-form-box mb-20">
@@ -118,7 +103,7 @@ require 'header.php';
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <button class="btn btn-lg btn-black-default-hover" type="submit">SEND</button>
+                                <button class="btn btn-lg btn-black-default-hover" name="submit-contact" type="submit">SEND</button>
                             </div>
                             <p class="form-messege"></p>
                         </div>
