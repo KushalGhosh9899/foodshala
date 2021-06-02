@@ -88,7 +88,7 @@ require 'header.php';
                                                                 <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
                                                                 <div class="product-default-single-item product-color--golden" data-aos="fade-up" data-aos-delay="0">
                                                                     <div class="image-box">
-                                                                <a href="product-details-default.html" class="image-link">
+                                                                <a href="product-details-default?pid='.$row['products'].'" class="image-link">
                                                                     <img class="product-image-veg" src="' . $row['productImage'] . '" alt="">
                                                                     <img class="product-image-veg" src="' . $row['image3'] . '" alt="">
                                                                 </a>
@@ -153,7 +153,7 @@ require 'header.php';
                                                                 <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
                                                                 <div class="product-default-single-item product-color--golden" data-aos="fade-up" data-aos-delay="0">
                                                                     <div class="image-box">
-                                                                <a href="product-details-default.html" class="image-link">
+                                                                <a href="product-details-default?pid='.$row['products'].'" class="image-link">
                                                                     <img class="product-image-veg" src="' . $row['productImage'] . '" alt="">
                                                                     <img class="product-image-veg" src="' . $row['image3'] . '" alt="">
                                                                 </a>
@@ -183,7 +183,7 @@ require 'header.php';
                                                                 </div>
                                                                 <div class="content">
                                                                 <div class="content-left">
-                                                                    <h6 class="title"><a href="product-details-default.html">' . $row['productName'] . '</a></h6>
+                                                                    <h6 class="title"><a href="product-details-default?pid='.$row['products'].'">' . $row['productName'] . '</a></h6>
                                                                     <ul class="review-star">
                                                                         <li class="fill"><i class="ion-android-star"></i>
                                                                         </li>
@@ -233,12 +233,12 @@ require 'header.php';
                                                             echo '
                                                             <div class="col-12">
                                                                 <div class="product-list-single product-color--golden">
-                                                                    <a href="product-details-default.html" class="product-list-img-link product-image-non-veg">
+                                                                    <a href="product-details-default?pid='.$row['products'].'" class="product-list-img-link product-image-non-veg">
                                                                         <img class="image-fluid product-image-non-veg-fluid" src="' . $row['productImage'] . '" alt="">
                                                                         <img class="image-fluid product-image-non-veg-fluid" src="' . $row['image3'] . '" alt="">
                                                                     </a>
                                                                     <div class="product-list-content">
-                                                                        <h5 class="product-list-link"><a href="product-details-default.html">' . $row['productName'] . '</a></h5>
+                                                                        <h5 class="product-list-link"><a href="product-details-default?pid='.$row['products'].'">' . $row['productName'] . '</a></h5>
                                                                         <ul class="review-star">
                                                                             <li class="fill"><i class="ion-android-star"></i></li>
                                                                             <li class="fill"><i class="ion-android-star"></i></li>

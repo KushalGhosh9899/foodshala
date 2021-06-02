@@ -186,3 +186,12 @@ html{
     height: 25vh !important;
     object-fit: cover !important;
 }
+.img-veg{
+    height: 60vh!important;
+    object-fit: cover !important;
+}
+.img-non-veg{
+    width:100% !important;
+    height: 12vh!important;
+    object-fit: cover !important;
+}

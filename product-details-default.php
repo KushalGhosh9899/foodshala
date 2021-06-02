@@ -1,19 +1,26 @@
 <?php
 require 'header.php';
-?>
+require_once 'includes/db.inc.php';
+$pid = $_GET['pid'];
+$sql = "SELECT * FROM products where products='$pid'";
+$result = $conn->query($sql);
+if ($conn) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '
 <!-- ...:::: Start Breadcrumb Section:::... -->
 <div class="breadcrumb-section breadcrumb-bg-color--golden">
     <div class="breadcrumb-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="breadcrumb-title">Product Details - Default</h3>
+                    <h3 class="breadcrumb-title">Product Details</h3>
                     <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                         <nav aria-label="breadcrumb">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
-                                <li class="active" aria-current="page">Product Details Default</li>
+                                <li><a href="shop-full-width">All Menu</a></li>
+                                <li class="active" aria-current="page">Product Details</li>
                             </ul>
                         </nav>
                     </div>
@@ -27,25 +34,25 @@ require 'header.php';
 <div class="product-details-section">
     <div class="container">
         <div class="row">
-            <div class="col-xl-5 col-lg-6">
+            <div class="col-xl-5 col-lg-6"> 
                 <div class="product-details-gallery-area" data-aos="fade-up" data-aos-delay="0">
                     <!-- Start Large Image -->
                     <div class="product-large-image product-large-image-horaizontal swiper-container">
                         <div class="swiper-wrapper">
                             <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                <img src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                <img class="img-veg" src="'.$row['productImage'].'" alt="">
                             </div>
                             <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                <img src="assets/images/product/default/home-1/default-2.jpg" alt="">
+                                <img class="img-veg" src="'.$row['image2'].'" alt="">
                             </div>
                             <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                <img src="assets/images/product/default/home-1/default-3.jpg" alt="">
+                                <img class="img-veg" src="'.$row['image3'].'" alt="">
                             </div>
                             <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                <img src="assets/images/product/default/home-1/default-4.jpg" alt="">
+                                <img class="img-veg" src="'.$row['image4'].'" alt="">
                             </div>
                             <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                <img src="assets/images/product/default/home-1/default-5.jpg" alt="">
+                                <img class="img-veg" src="'.$row['image5'].'" alt="">
                             </div>
                         </div>
                     </div>
@@ -54,19 +61,19 @@ require 'header.php';
                     <div class="product-image-thumb product-image-thumb-horizontal swiper-container pos-relative mt-5">
                         <div class="swiper-wrapper">
                             <div class="product-image-thumb-single swiper-slide">
-                                <img class="img-fluid" src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                <img class="img-fluid img-non-veg" src="'.$row['productImage'].'" alt="">
                             </div>
                             <div class="product-image-thumb-single swiper-slide">
-                                <img class="img-fluid" src="assets/images/product/default/home-1/default-2.jpg" alt="">
+                                <img class="img-fluid img-non-veg" src="'.$row['image2'].'" alt="">
                             </div>
                             <div class="product-image-thumb-single swiper-slide">
-                                <img class="img-fluid" src="assets/images/product/default/home-1/default-3.jpg" alt="">
+                                <img class="img-fluid img-non-veg" src="'.$row['image3'].'" alt="">
                             </div>
                             <div class="product-image-thumb-single swiper-slide">
-                                <img class="img-fluid" src="assets/images/product/default/home-1/default-4.jpg" alt="">
+                                <img class="img-fluid img-non-veg" src="'.$row['image4'].'" alt="">
                             </div>
                             <div class="product-image-thumb-single swiper-slide">
-                                <img class="img-fluid" src="assets/images/product/default/home-1/default-5.jpg" alt="">
+                                <img class="img-fluid img-non-veg" src="'.$row['image5'].'" alt="">
                             </div>
                         </div>
                         <!-- Add Arrows -->
@@ -80,12 +87,9 @@ require 'header.php';
                 <div class="product-details-content-area product-details--golden" data-aos="fade-up" data-aos-delay="200">
                     <!-- Start  Product Details Text Area-->
                     <div class="product-details-text">
-                        <h4 class="title">Ornare sed consequat</h4>
-                        <div class="price">$80.00</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est
-                            tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis
-                            justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id
-                            nulla.</p>
+                        <h4 class="title">'.$row['productName'].'</h4>
+                        <div class="price">Rs '.$row['price'].'</div>
+                        <p>'.$row['description'].'</p>
                     </div> <!-- End  Product Details Text Area-->
                     <!-- Start Product Variable Area -->
                     <div class="product-details-variable">
@@ -107,8 +111,20 @@ require 'header.php';
                     <div class="product-details-catagory mb-2">
                         <span class="title">CATEGORIES:</span>
                         <ul>
-                            <li><a href="#">All Dishes</a></li>
-                            <li><a href="#">Veg Dishes</a></li>
+                            <li><a href="shop-full-width">All Dishes</a></li>
+                            ';
+                            if($row['foodType']=='Veg'){
+                                echo '
+                                <li><a href="veg-menu">Veg Dishes</a></li>
+                                ';
+                            }
+                            else{
+                                echo '
+                                <li><a href="non-veg-menu">Non Veg Dishes</a></li>
+                                ';                                
+                            }
+                            echo'
+                            
                         </ul>
                     </div> <!-- End  Product Details Catagories Area-->
                     <!-- Start  Product Details Social Area-->
@@ -128,54 +144,9 @@ require 'header.php';
     </div>
 </div> <!-- End Product Details Section -->
 
-<!-- Start Product Content Tab Section -->
-<div class="product-details-content-tab-section section-top-gap-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="product-details-content-tab-wrapper" data-aos="fade-up" data-aos-delay="0">
 
-                    <!-- Start Product Details Tab Button -->
-                    <ul class="nav tablist product-details-content-tab-btn d-flex justify-content-center">
-                        <li><a class="nav-link active" data-bs-toggle="tab" href="#description">
-                                Description
-                            </a>
-                        </li>
-                    </ul> <!-- End Product Details Tab Button -->
-
-                    <!-- Start Product Details Tab Content -->
-                    <div class="product-details-content-tab">
-                        <div class="tab-content">
-                            <!-- Start Product Details Tab Content singal -->
-                            <div class="tab-pane active show" id="description">
-                                <div class="single-tab-content-item">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue
-                                        nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi
-                                        ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
-                                        adipiscing cursus eu, suscipit id nulla. </p>
-                                    <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem,
-                                        quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies
-                                        massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero
-                                        hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus
-                                        nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus,
-                                        consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in
-                                        imperdiet ligula euismod eget</p>
-                                </div>
-                            </div>
-                            <!-- End Product Details Tab Content singal -->
-                            <!-- Start Product Details Tab Content singal -->
-                        </div>
-                    </div> <!-- End Product Details Tab Content -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Product Content Tab Section -->
-
-
-<?php
+';
+        }
+    }
+}
 require 'footer.php';
-?>
