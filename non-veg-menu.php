@@ -7,12 +7,13 @@ require 'header.php';
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="breadcrumb-title">All Menu</h3>
+                    <h3 class="breadcrumb-title">Non Veg Dishes</h3>
                     <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                         <nav aria-label="breadcrumb">
                             <ul>
                                 <li><a href="index">Home</a></li>
-                                <li class="active" aria-current="page">Menu</li>
+                                <li><a href="shop-full-width">All Menu</a></li>
+                                <li class="active" aria-current="page">Non-Veg Dishes</li>
                             </ul>
                         </nav>
                     </div>
@@ -49,7 +50,7 @@ require 'header.php';
                                 <!-- Start Sort Select Option -->
                                 <div class="sort-select-list d-flex align-items-center">
                                     <label class="mr-2">Sort By:</label>
-                                    <select class="form-control" onchange="window.location.href=`shop-full-width?filter-product=${value}`">
+                                    <select class="form-control" onchange="window.location.href=`non-veg-menu?filter-product=${value}`">
                                         <option value="" selected disabled hidden>Select Filter to Apply</option>
                                         <option value="ASC">Sort by price: low to high</option>
                                         <option value="DESC">Sort by price: high to low</option>
@@ -79,7 +80,7 @@ require 'header.php';
                                             require_once 'includes/db.inc.php';
                                             if (!empty($_GET['filter-product'])) {
                                                 $filter = $_GET['filter-product'];
-                                                $sql = "SELECT * FROM products ORDER BY price $filter";
+                                                $sql = "SELECT * FROM products where foodType='Non Veg' ORDER BY price $filter";
                                                 $result = $conn->query($sql);
                                                 if ($conn) {
                                                     if ($result->num_rows > 0) {
@@ -144,7 +145,7 @@ require 'header.php';
                                                     }
                                                 }
                                             } else {
-                                                $sql = "SELECT * FROM products";
+                                                $sql = "SELECT * FROM products where foodType='Non Veg'";
                                                 $result = $conn->query($sql);
                                                 if ($conn) {
                                                     if ($result->num_rows > 0) {
@@ -225,7 +226,7 @@ require 'header.php';
 
                                             if (!empty($_GET['filter-product'])) {
                                                 $filter = $_GET['filter-product'];
-                                                $sql = "SELECT * FROM products ORDER BY price $filter";
+                                                $sql = "SELECT * FROM products where foodType='Non Veg' ORDER BY price $filter";
                                                 $result = $conn->query($sql);
                                                 if ($conn) {
                                                     if ($result->num_rows > 0) {
@@ -263,7 +264,7 @@ require 'header.php';
                                                     }
                                                 }
                                             } else {
-                                                $sql = "SELECT * FROM products";
+                                                $sql = "SELECT * FROM products where foodType='Non Veg'";
                                                 $result = $conn->query($sql);
                                                 if ($conn) {
                                                     if ($result->num_rows > 0) {

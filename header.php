@@ -73,9 +73,9 @@ session_start();
                       <a class="active main-menu-link" href="shop-full-width">Menu <i class="fa fa-angle-down"></i></a>
                       <!-- Sub Menu -->
                       <ul class="sub-menu">
-                        <li><a href="index">All Dishes</a></li>
-                        <li><a href="index-2">Veg Dishes</a></li>
-                        <li><a href="index-3">Non Veg Dishes</a></li>
+                        <li><a href="shop-full-width">All Dishes</a></li>
+                        <li><a href="veg-menu">Veg Dishes</a></li>
+                        <li><a href="non-veg-menu">Non Veg Dishes</a></li>
                       </ul>
                     </li>
 
