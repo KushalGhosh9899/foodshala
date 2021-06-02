@@ -420,8 +420,8 @@ session_start();
   <!-- Start Offcanvas Search Bar Section -->
   <div id="search" class="search-modal">
     <button type="button" class="close">×</button>
-    <form>
-      <input type="search" placeholder="type keyword(s) here" />
+    <form action="search-product" method="POST">
+      <input type="search" name="search-query" placeholder="type keyword(s) here" />
       <button type="submit" class="btn btn-lg btn-pink">Search</button>
     </form>
   </div>
