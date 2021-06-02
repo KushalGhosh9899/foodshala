@@ -33,12 +33,13 @@ if (isset($_POST['confirm-order'])) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $orderDate = date("Y-m-d");
+                $orderStatus = 'Pending';
 
-                $sql = "INSERT INTO orderhistory (productImage,userID, productName, price,productID,orderID,createdAt) VALUES(?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO orderhistory (productImage,userID, productName, price,productID,orderID,orderStatus,createdAt) VALUES(?,?,?,?,?,?,?,?)";
                 $stmt = mysqli_stmt_init($conn);
                 mysqli_stmt_prepare($stmt, $sql);
 
-                mysqli_stmt_bind_param($stmt, "sssisss", $row['productImage'], $row['userID'], $row['productName'], $row['price'], $row['productID'], $orderID, $orderDate);
+                mysqli_stmt_bind_param($stmt, "sssisss", $row['productImage'], $row['userID'], $row['productName'], $row['price'], $row['productID'], $orderID, $orderStatus, $orderDate);
                 mysqli_stmt_execute($stmt);
             }
         }
