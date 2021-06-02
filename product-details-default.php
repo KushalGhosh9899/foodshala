@@ -89,7 +89,7 @@ if ($conn) {
                     <div class="product-details-text">
                         <h4 class="title">'.$row['productName'].'</h4>
                         <div class="price">Rs '.$row['price'].'</div>
-                        <p>'.$row['description'].'</p>
+                        <p><b>'.$row['foodType'].'</b><br>'.$row['description'].'</p>
                     </div> <!-- End  Product Details Text Area-->
                     <!-- Start Product Variable Area -->
                     <div class="product-details-variable">
@@ -102,8 +102,13 @@ if ($conn) {
                         <div class="d-flex align-items-center ">
 
                             <div class="product-add-to-cart-btn">
-                                <a href="#" class="btn btn-block btn-lg btn-black-default-hover" data-bs-toggle="modal" data-bs-target="#modalAddcart">+ Add To Cart</a>
+                            <form action="includes/add-to-cart.inc" method="POST">
+                            <input type="hidden" value="'.$row['productImage'].'" name="product-image">
+                            <input type="hidden" value="'.$row['productName'].'" name="product-name">
+                            <input type="hidden" value="'.$row['price'].'" name="product-price">
+                                <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="add-to-cart">+ Add To Cart</button>
                             </div>
+                            </form>
                         </div>
                     </div> <!-- End Product Variable Area -->
 

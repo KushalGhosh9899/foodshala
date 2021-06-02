@@ -113,7 +113,13 @@ require 'header.php';
                                                                         <a href="#">Add to Cart</a>
                                                                     </div>
                                                                     <div class="action-link-right">
-                                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart"><i class="icon-bag"></i></a>                                                                
+                                                                        <form action="includes/add-to-cart.inc" method="POST">
+                                                                    <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
+                                                                    <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                    <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                        <button type=""submit"" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
+                                                                    
+                                                                    </form>                                                                 
                                                                     </div>
                                                                 </div>
                                                                 </div>
@@ -175,10 +181,16 @@ require 'header.php';
                                                             echo '
                                                                 <div class="action-link">
                                                                     <div class="action-link-left">
-                                                                        <a href="#">Add to Cart</a>
+                                                                        <a href="#">Order Now</a>
                                                                     </div>
                                                                     <div class="action-link-right">
-                                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart"><i class="icon-bag"></i></a>                                                                
+                                                                    <form action="includes/add-to-cart.inc" method="POST">
+                                                                    <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
+                                                                    <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                    <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                        <button type=""submit"" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
+                                                                    
+                                                                    </form>                                                                 
                                                                     </div>
                                                                 </div>
                                                                 </div>
@@ -250,11 +262,13 @@ require 'header.php';
                                                                         <span class="product-list-price">Rs ' . $row['price'] . '</span>
                                                                         <p><b>' . $row['foodType'] . '</b><br>' . $row['description'] . '</p>
                                                                         <div class="product-action-icon-link-list">
-                                                                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover">Add to
-                                                                                cart</a>
-                                                                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover"><i class="icon-magnifier"></i></a>
-                                                                            <a href="wishlist.html" class="btn btn-lg btn-black-default-hover"><i class="icon-heart"></i></a>
-                                                                            <a href="compare.html" class="btn btn-lg btn-black-default-hover"><i class="icon-shuffle"></i></a>
+                                                                        <form action="includes/add-to-cart.inc" method="POST">
+                                                                        <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
+                                                                        <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                        <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                            <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="add-to-cart">+ Add To Cart</button>
+                                                                        
+                                                                        </form>
                                                                         </div>
                                                                     </div>
                                                                 </div> 
@@ -288,11 +302,13 @@ require 'header.php';
                                                                     <span class="product-list-price">Rs ' . $row['price'] . '</span>
                                                                     <p><b>' . $row['foodType'] . '</b><br>' . $row['description'] . '</p>
                                                                     <div class="product-action-icon-link-list">
-                                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover">Add to
-                                                                            cart</a>
-                                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover"><i class="icon-magnifier"></i></a>
-                                                                        <a href="wishlist.html" class="btn btn-lg btn-black-default-hover"><i class="icon-heart"></i></a>
-                                                                        <a href="compare.html" class="btn btn-lg btn-black-default-hover"><i class="icon-shuffle"></i></a>
+                                                                    <form action="includes/add-to-cart.inc" method="POST">
+                                                                    <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
+                                                                    <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                    <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                        <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="add-to-cart">+ Add To Cart</button>
+                                                                    
+                                                                    </form>
                                                                     </div>
                                                                 </div>
                                                             </div> 
