@@ -87,20 +87,19 @@ session_start();
                       <a href="contact-us">Contact Us</a>
                     </li>
                     <?php
-                    if (isset($_SESSION['userId'])&&isset($_SESSION['type'])) {
-                      if($_SESSION['type']=='user'){
+                    if (isset($_SESSION['userId']) && isset($_SESSION['type'])) {
+                      if ($_SESSION['type'] == 'user') {
                         echo '
                         <li>
                           <a href="my-account">My Account</a>
                         </li>
                         ';
-                      }
-                      else if($_SESSION['type']=='restaurant'){
+                      } else if ($_SESSION['type'] == 'restaurant') {
                         echo '
                         <li>
                           <a href="manage-restaurant">Manage Restaurant</a>
                         </li>
-                        ';                        
+                        ';
                       }
                     } else {
                       echo '
@@ -328,66 +327,49 @@ session_start();
     <div class="offcanvas-add-cart-wrapper">
       <h4 class="offcanvas-title">Shopping Cart</h4>
       <ul class="offcanvas-cart">
-        <li class="offcanvas-cart-item-single">
-          <div class="offcanvas-cart-item-block">
-            <a href="#" class="offcanvas-cart-item-image-link">
-              <img src="assets/images/product/default/home-3/default-1.jpg" alt="" class="offcanvas-cart-image">
-            </a>
-            <div class="offcanvas-cart-item-content">
-              <a href="#" class="offcanvas-cart-item-link">Car Wheel</a>
-              <div class="offcanvas-cart-item-details">
-                <span class="offcanvas-cart-item-details-quantity">1 x </span>
-                <span class="offcanvas-cart-item-details-price">$49.00</span>
-              </div>
-            </div>
-          </div>
-          <div class="offcanvas-cart-item-delete text-right">
-            <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-          </div>
-        </li>
-        <li class="offcanvas-cart-item-single">
-          <div class="offcanvas-cart-item-block">
-            <a href="#" class="offcanvas-cart-item-image-link">
-              <img src="assets/images/product/default/home-2/default-1.jpg" alt="" class="offcanvas-cart-image">
-            </a>
-            <div class="offcanvas-cart-item-content">
-              <a href="#" class="offcanvas-cart-item-link">Car Vails</a>
-              <div class="offcanvas-cart-item-details">
-                <span class="offcanvas-cart-item-details-quantity">3 x </span>
-                <span class="offcanvas-cart-item-details-price">$500.00</span>
-              </div>
-            </div>
-          </div>
-          <div class="offcanvas-cart-item-delete text-right">
-            <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-          </div>
-        </li>
-        <li class="offcanvas-cart-item-single">
-          <div class="offcanvas-cart-item-block">
-            <a href="#" class="offcanvas-cart-item-image-link">
-              <img src="assets/images/product/default/home-3/default-1.jpg" alt="" class="offcanvas-cart-image">
-            </a>
-            <div class="offcanvas-cart-item-content">
-              <a href="#" class="offcanvas-cart-item-link">Shock Absorber</a>
-              <div class="offcanvas-cart-item-details">
-                <span class="offcanvas-cart-item-details-quantity">1 x </span>
-                <span class="offcanvas-cart-item-details-price">$350.00</span>
-              </div>
-            </div>
-          </div>
-          <div class="offcanvas-cart-item-delete text-right">
-            <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-          </div>
-        </li>
-      </ul>
-      <div class="offcanvas-cart-total-price">
-        <span class="offcanvas-cart-total-price-text">Subtotal:</span>
-        <span class="offcanvas-cart-total-price-value">$170.00</span>
-      </div>
-      <ul class="offcanvas-cart-action-button">
-        <li><a href="cart" class="btn btn-block btn-pink">View Cart</a></li>
-        <li><a href="compare" class=" btn btn-block btn-pink mt-5">Checkout</a></li>
-      </ul>
+        <?php
+        $userid = $_SESSION['userId'];
+        require_once 'includes/db.inc.php';
+        $sql = "SELECT * FROM cart where userID='$userid'";
+        $result = $conn->query($sql);
+        if ($conn) {
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo '
+                <li class="offcanvas-cart-item-single">
+                  <div class="offcanvas-cart-item-block">
+                    <a href="product-details-default?pid=' . $row['productID'] . '" class="offcanvas-cart-item-image-link">
+                      <img src="' . $row['productImage'] . '" alt="" class="offcanvas-cart-image">
+                    </a>
+                    <div class="offcanvas-cart-item-content">
+                      <a href="product-details-default?pid=' . $row['productID'] . '" class="offcanvas-cart-item-link">' . $row['productName'] . '</a>
+                      <div class="offcanvas-cart-item-details">
+                        <span class="offcanvas-cart-item-details-price">Rs ' . $row['price'] . '</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offcanvas-cart-item-delete text-right">
+                    <a href="delete-product?pid=' . $row['productID'] . '" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
+                  </div>
+                </li>
+            ';
+            }
+          }
+        }
+        $query = "select SUM(price) as 'sumcart' from cart WHERE userID='$userid'";
+        $res = mysqli_query($conn, $query);
+        $data = mysqli_fetch_array($res);
+        echo '
+        </ul>
+        <div class="offcanvas-cart-total-price">
+          <span class="offcanvas-cart-total-price-text">Subtotal:</span>
+          <span class="offcanvas-cart-total-price-value">Rs '.$data['sumcart'].'</span>
+        </div>';
+        ?>
+        <ul class="offcanvas-cart-action-button">
+          <li><a href="cart" class="btn btn-block btn-pink">View Cart</a></li>
+          <li><a href="checkout" class=" btn btn-block btn-pink mt-5">Checkout</a></li>
+        </ul>
     </div>
     <!-- End  Offcanvas Addcart Wrapper -->
 

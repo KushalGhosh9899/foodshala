@@ -116,6 +116,7 @@ require 'header.php';
                                                                     <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
                                                                     <input type="hidden" value="' . $row['productName'] . '" name="product-name">
                                                                     <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                    <input type="hidden" value="'.$row['products'].'" name="product-ID">
                                                                         <button type=""submit"" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
                                                                     
                                                                     </form>                                                                 
@@ -187,6 +188,7 @@ require 'header.php';
                                                                     <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
                                                                     <input type="hidden" value="' . $row['productName'] . '" name="product-name">
                                                                     <input type="hidden" value="' . $row['price'] . '" name="product-price">
+                                                                    <input type="hidden" value="'.$row['products'].'" name="product-ID">
                                                                         <button type=""submit"" name="add-to-cart"><i style="color:white"class="icon-bag"></i></button>
                                                                     
                                                                     </form>                                                                 
@@ -264,6 +266,7 @@ require 'header.php';
                                                                                 <form action="includes/add-to-cart.inc" method="POST">
                                                                                 <input type="hidden" value="' . $row['productImage'] . '" name="product-image">
                                                                                 <input type="hidden" value="' . $row['productName'] . '" name="product-name">
+                                                                                <input type="hidden" value="'.$row['products'].'" name="product-ID">
                                                                                 <input type="hidden" value="' . $row['price'] . '" name="product-price">
                                                                                     <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="add-to-cart">+ Add To Cart</button>
                                                                                 
@@ -304,6 +307,7 @@ require 'header.php';
                                                                     <form action="includes/add-to-cart.inc" method="POST">
                                                                     <input type="hidden" value="'.$row['productImage'].'" name="product-image">
                                                                     <input type="hidden" value="'.$row['productName'].'" name="product-name">
+                                                                    <input type="hidden" value="'.$row['products'].'" name="product-ID">
                                                                     <input type="hidden" value="'.$row['price'].'" name="product-price">
                                                                         <button type="submit" class="btn btn-block btn-lg btn-black-default-hover" name="add-to-cart">+ Add To Cart</button>
                                                                     
