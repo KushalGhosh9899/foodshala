@@ -141,12 +141,7 @@ session_start();
                 </li>
                 <?php
                 if (isset($_SESSION['userId'])) {
-                  echo '                      
-                      <li>
-                        <a href="myaccount">
-                          <i class="icon-user"></i>
-                        </a>
-                      </li>
+                  echo '
                       <li>
                         <a href="logout">
                           <i class="icon-power"></i>

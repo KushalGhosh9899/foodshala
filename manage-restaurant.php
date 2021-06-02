@@ -1,5 +1,88 @@
 <?php
 require 'header.php';
+require_once 'includes/db.inc.php';
+
+$totalrevenue = 0;
+$totalorders = 0;
+$cancelledorder = 0;
+$alldish = 0;
+
+$userid = $_SESSION['userId'];
+$username = $_SESSION['name'];
+
+//Finding out the total revenue
+
+$sql = "SELECT productID FROM orderhistory";
+$result = $conn->query($sql);
+if ($conn) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $pid = $row['productID'];
+            $sql = "SELECT price FROM products where products = '$pid'";
+            $resultt = $conn->query($sql);
+            if ($conn) {
+                if ($resultt->num_rows > 0) {
+                    while ($roww = $resultt->fetch_assoc()) {
+                        $totalrevenue = $totalrevenue+$roww['price'];
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Finding out the total orders
+
+$sql = "SELECT productID FROM orderhistory";
+$result = $conn->query($sql);
+if ($conn) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $pid = $row['productID'];
+            $sql = "SELECT * FROM products where products = '$pid'";
+            $resultt = $conn->query($sql);
+            if ($conn) {
+                if ($resultt->num_rows > 0) {
+                    while ($roww = $resultt->fetch_assoc()) {
+                        $totalorders=$totalorders+1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Finding out the toal cancelled Orders
+
+$sql = "SELECT productID FROM orderhistory where orderStatus='Cancelled'";
+$result = $conn->query($sql);
+if ($conn) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $pid = $row['productID'];
+            $sql = "SELECT * FROM products where products = '$pid'";
+            $resultt = $conn->query($sql);
+            if ($conn) {
+                if ($resultt->num_rows > 0) {
+                    while ($roww = $resultt->fetch_assoc()) {
+                        $cancelledorder=$cancelledorder+1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Finding out the all dishes
+$sql = "SELECT * FROM products where restaurantName='$username'";
+$result = $conn->query($sql);
+if ($conn) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $alldish=$alldish+1;
+        }
+    }
+}
 ?>
 
 <head>
@@ -17,52 +100,52 @@ require 'header.php';
     </div>
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <a class="dashboard-stat red" href="#">
+            <a class="dashboard-stat red" href="view-orders">
                 <div class="visual">
                     <i class="fa fa-usd"></i>
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span>312</span>
+                        <span><?php echo $totalrevenue; ?></span>
                     </div>
                     <div class="desc">Total Revenue</div>
                 </div>
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <a class="dashboard-stat blue" href="#">
+            <a class="dashboard-stat blue" href="view-orders">
                 <div class="visual">
                     <i class="fa fa-bar-chart-o"></i>
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span>12.5</span>
+                        <span><?php echo $totalorders; ?></span>
                     </div>
                     <div class="desc">Total Orders</div>
                 </div>
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <a class="dashboard-stat hoki" href="#">
+            <a class="dashboard-stat hoki" href="view-cancelled">
                 <div class="visual">
-                    <i class="fa fa-credit-card"></i>
+                    <i class="fa fa-ban"></i>
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span>+ 53%</span>
+                        <span>+ <?php echo $cancelledorder; ?></span>
                     </div>
                     <div class="desc">Cancelled Orders</div>
                 </div>
             </a>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <a class="dashboard-stat purple" href="#">
+            <a class="dashboard-stat purple" href="view-all-dish">
                 <div class="visual">
-                    <i class="fa fa-comments"></i>
+                    <i class="fa fa-cutlery"></i>
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span>689</span>
+                        <span> <?php echo $alldish; ?></span>
                     </div>
                     <div class="desc">All Dishes</div>
                 </div>
